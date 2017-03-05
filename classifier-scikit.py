@@ -36,10 +36,7 @@ class BookingPredictor():
     # Impute missing values
     # Feature Selection
     def preprocess(self):
-        #self.preprocess_range_col('age')
-        #self.preprocess_range_col('weight')
-        #self.df.replace(to_replace={'readmitted':{'<30':'Yes','>30':'No'}},inplace=True)
-        #self.df['readmitted'] = self.df['readmitted'].str.lower()
+
         self.preprocess_others()
         self.drop_irrelevant_cols()
         #self.normalize()
@@ -53,12 +50,12 @@ class BookingPredictor():
         self.df = pd.DataFrame.from_records(imputer.transform(self.df),columns=self.df.columns)
 
 	#Purpose: Uses the Median to replace all the missing values
+    '''
     def impute_missing(self):
         imputer = Imputer(strategy = "median")
-        df_y = self.df['readmitted']
         df_imputed = imputer.fit_transform(self.df[self.df.columns[:-1]],df_y)
         self.df = pd.DataFrame.from_records(df_imputed,columns=self.df.columns[:-1])
-        self.df['readmitted'] = df_y
+    '''
 
     #Purpose: Uses KNN algorithm to replace all the missing values
 #    def impute_knn(self):
@@ -163,7 +160,6 @@ class BookingPredictor():
             return 10
  
     # Purpose: Make sure every column is formatted to a numerical meaningful value.
-    # ? in label are re labled
     # Cateorical string values are num encoded.
     def preprocess_others(self):
         le = LabelEncoder()
@@ -185,7 +181,7 @@ class BookingPredictor():
     def preprocess_range_col(self,col):
         self.df[col] = self.df[col].str.extract('\[(\d+)\-(\d+)\)',expand=True).astype(int).mean(axis=1)
 
-    #Purpose: Convert ? in to Nan which can be processed later.
+    #Purpose: Convert NA in to Nan which can be processed later.
     def set_nan_cols(self):
         for col in self.df.columns:
             temp = self.df[col].unique()
