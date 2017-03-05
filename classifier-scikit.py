@@ -237,7 +237,7 @@ class BookingPredictor():
 
     #Purpose: Implement voting classifier
     def run_voting_classifier(self):
-        clf1 = DecisionTreeClassifier(random_state=0, class_weight={1: 10})
+        clf1 = DecisionTreeClassifier(random_state=0, class_weight={1: 7})
         clf2 = LinearSVC(C=1.0, class_weight=None, dual=False, fit_intercept=True,intercept_scaling=1, loss='squared_hinge', max_iter=1000, multi_class='ovr',penalty='l2', random_state=None, tol=0.001, verbose=0)
         #clf2 = SVC(gamma=0.001, C=100.)
         clf3 = RandomForestClassifier(n_estimators = 25)
