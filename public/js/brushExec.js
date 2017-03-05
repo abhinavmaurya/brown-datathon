@@ -3,8 +3,8 @@
  */
 list = [];
 function plot1() {
-    var margin = {top: 10, right: 10, bottom: 100, left: 40},
-        margin2 = {top: 430, right: 10, bottom: 20, left: 40},
+    var margin = {top: 10, right: 10, bottom: 100, left: 60},
+        margin2 = {top: 430, right: 10, bottom: 20, left: 60},
         width = 960 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom,
         height2 = 500 - margin2.top - margin2.bottom;
@@ -98,8 +98,18 @@ function plot1() {
             .attr("text-anchor", "end")
             .attr("y", 6)
             .attr("dy", "1.90em")
-            .attr("transform", "rotate(-90)")
+            .attr("transform", "translate("+ (-15) +","+(height/2)+")rotate(-90)")
+            .style("font-size","15px")
             .text("Number of records");
+
+        svg.append("text")
+            .attr("class", "x label")
+            .attr("text-anchor", "end")
+            .attr("x", 6)
+            .attr("dx", "1.90em")
+            .attr("transform", "translate("+ (width-20) +","+(height+40)+")rotate(0)")
+            .style("font-size","15px")
+            .text("Date");
 
         focus.append("path")
             .datum(data)
