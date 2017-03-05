@@ -215,7 +215,7 @@ class BookingPredictor():
         df_yes = self.df[purchased_yes]
         self.df_oversampled = self.df.append([df_yes] * 3, ignore_index=True)
 
-
+    '''
     #Purpose: Implements the decision tree classifier
     def run_decision_tree(self):
         Y = self.df_oversampled["BookingPurchase"]
@@ -225,7 +225,9 @@ class BookingPredictor():
         scores = cross_val_score(dt, X, Y, cv=10)
         print("Decision Tree Score for bucket is: {}".format(scores))
         #self.visualize_tree(dt, self.df.columns[:-1])
+    '''
 
+    '''
     def run_svm(self):
         Y = self.df_oversampled["BookingPurchase"]
         X = self.df_oversampled[self.df_oversampled.columns[:-1]]
@@ -234,10 +236,11 @@ class BookingPredictor():
         scores = cross_val_score(dt, X, Y, cv=10)
         print("SVM Score for bucket is: {}".format(scores))
         #self.visualize_tree(dt, self.df.columns[:-1])
+    '''
 
     #Purpose: Implement voting classifier
     def run_voting_classifier(self):
-        clf1 = DecisionTreeClassifier(random_state=0, class_weight={1: 7})
+        clf1 = DecisionTreeClassifier(random_state=0, class_weight={0: 2})
         clf2 = LinearSVC(C=1.0, class_weight=None, dual=False, fit_intercept=True,intercept_scaling=1, loss='squared_hinge', max_iter=1000, multi_class='ovr',penalty='l2', random_state=None, tol=0.001, verbose=0)
         #clf2 = SVC(gamma=0.001, C=100.)
         clf3 = RandomForestClassifier(n_estimators = 25)
@@ -265,7 +268,7 @@ class BookingPredictor():
             testScores = accuracy_score(yTest, y_pred)
             confusionMatrix = confusion_matrix(yTest, y_pred)
             print(confusionMatrix)
-            joblib.dump(clf, label + '.pkl')
+            joblib.dump(clf, 'model.pkl')
             # testScores = cross_val_score(clf, xTest, yTest, cv=5, scoring='accuracy')
             print("Test Accuracy: %0.2f [%s]" % (testScores, label))
 
