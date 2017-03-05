@@ -53,3 +53,9 @@ button.navbar-toggle {
 h1{
     color: black !important;
 }
+
+tagcloud {
+    height: 200px;
+    width: 50%;
+    background-color: powderblue;
+}
