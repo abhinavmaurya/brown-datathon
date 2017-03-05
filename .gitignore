@@ -7,3 +7,4 @@ metastore_db/*
 .idea/brown-datathon.iml
 .idea/workspace.xml
 .DS_Store
+*.pyc

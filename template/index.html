@@ -197,6 +197,9 @@
          <input type = "submit" class="btn btn-primary" id="upload-button"/>
             </div>
       </form>
+        <br>
+        <br>
+        <h6 id="prediction-result"></h6>
     </div>
 </section>
 
@@ -266,6 +269,7 @@
 
 <script>
     var form = document.getElementById('upload-data-form');
+    var presult = document.getElementById('prediction-result');
     var fileSelect = document.getElementById('file-select');
     var uploadButton = document.getElementById('upload-button');
     form.onsubmit = function(event) {
@@ -302,6 +306,7 @@ xhr.onload = function () {
     // File(s) uploaded.
     uploadButton.innerHTML = 'Upload';
     console.log(xhr.responseText);
+    presult.innerText = xhr.responseText;
   } else {
     alert('An error occurred!');
   }

@@ -13,7 +13,7 @@ class BookingPredictor():
         print("init")
         self.df = pd.read_csv(file_name)
         self.nan_columns = []
-        self.clf = joblib.load("DecisionTree.pkl")
+        self.clf = joblib.load("model.pkl")
         self.set_nan_cols()
         self.preprocess()
 
