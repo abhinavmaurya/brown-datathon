@@ -13,6 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="public/vendor/jquery/jquery.min.js"></script>
     <meta charset="UTF-8">
     <title>Yolo Team:Trip Advisor Dataset: Datathon2017</title>
@@ -26,12 +27,14 @@
     <link href="public/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="public/css/brush.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
     <![endif]-->
 
 </head>
@@ -71,7 +74,8 @@
 
 <!-- Header -->
 <header>
-    <div class="container">
+    <div id="plot1" class="container">
+        <script src="public/js/brushExec.js"></script>
     </div>
 </header>
 
