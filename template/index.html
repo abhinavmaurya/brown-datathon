@@ -179,6 +179,13 @@
         Based on this data, it looks like the more time the user spends on the site, either he is too confused, or he is just messing
         around with the trip advisor sales team who are hoping graciously that this user will finally select a location and book
         his ticket. But Alas! this is not what the data suggests, and its better to not to spend time on this user.
+        <h3 align="left">We have proof for:</h3>
+        <h3 align="left">Less page views, more conversion</h3>
+        Could suggest that users who are determined to book, will just go straight to the page and finish checkout. Also, worth to note that they dont linger more.
+        <h3 align="left">Less session Activity and session Duration, more conversion</h3>
+        Again, users who are determined will spend less time and performs limited activities on the website.
+        <h3 align="left">Mobile for browsing, but PCs for booking</h3>
+        We found out that users use mobile devices for browsing, but trust PCs and macs for booking
     </div>
     <br />
     <br />
@@ -195,9 +202,7 @@
         we were unable to get the other visualizations connected in time. so we decided to visualize all the other insights we had using
         Tableau.
         <h3 align="left">Machine Learning:</h3>
-        <p>The backend is prediction models and deployed on python server using Flask.</p>
-
-        <h5>Classifiers explored:</h5>
+        <h4>Classifiers explored:</h4>
         <ul>
             <li>SVM - Linear</li>
             <li>SVM - RBF kernel</li>
@@ -207,12 +212,16 @@
             <li>Feed Forward Neural Network (on spark)</li>
         </ul>
         <br>
+        <h4>Simple Prediction Task</h4>
         <div class="center-block"  style="text-align:center">
             <img src="public/pic/flow.png" width="80%">
         </div>
         <br><br>
+        <p>The backend is an end to end predictive system that uses Spark for distributed processing and sklearn from advanced classifier.
+            The final model is deployed to the web server to predict results in real time deployed on Flask framework.</p>
+         <br>
+            <h4>Detailed end-to-end workflow for parallel execution in spark</h4>
         <div class="center-block"  style="text-align:center">
-            <p>Detailed workflow for parallel execution in spark</p>
             <img src="public/pic/sparkworkflow.png" width="90%">
         </div>
 <br>
