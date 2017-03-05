@@ -1,7 +1,7 @@
 /**
  * Created by Akshaya on 3/5/2017.
  */
-
+list = [];
 function plot1() {
     var margin = {top: 10, right: 10, bottom: 100, left: 40},
         margin2 = {top: 430, right: 10, bottom: 20, left: 40},
@@ -157,14 +157,9 @@ function plot1() {
         focus.select(".x.axis").call(xAxis);
         // Force changing brush range
         brush.extent(x.domain());
-        var list = [];
         list.push(x.domain()[0]);
         list.push(x.domain()[1]);
-        // console.log(list);
-        plot(list);
         svg.select(".brush").call(brush);
-
-
     }
 
     function type(d) {
@@ -173,15 +168,18 @@ function plot1() {
         d.RecordCount = +d.RecordCount;
         return d;
     }
-
+    // setInterval(function(){plot()},1000);
 }
 
 
-function plot(list){
-    // console.log(list);
-    d3.csv("datathon_tadata.csv", function (error, data1) {
+function plot(){
+    console.log(list);
+    d3.csv("public/datathon_tadata.csv", function (error, data1) {
+        // console.log("s");
         cf= crossfilter(data1);
         byDate = cf.dimension(function(d){return d.day;});
+        console.log(list[0]);
+        console.log(byDate.filter(list[0]));
 
 
     });
