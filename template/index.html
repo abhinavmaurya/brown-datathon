@@ -83,7 +83,7 @@
 <header>
     <div id="plot1" class="container">
         <h4 style="color:black"> Data Distribution for Trip Advisor (Brushing and Linking enabled)<br>
-        Exponential growth from November until January, with peak being in January</h4>
+            Exponential growth from November until January, with peak being in January</h4>
         <script src="public/js/brushExec.js"></script>
     </div>
 </header>
@@ -92,7 +92,7 @@
 <section id="portfolio">
     <h4 style="color:black;text-align: center"> Data Exploration and Derived Insights</h4>
     <div class="container" id="plot2">
-       <p align="center"> <script src="public/js/bookingPurchasePie.js"></script></p>
+        <p align="center"> <script src="public/js/bookingPurchasePie.js"></script></p>
         <div>
             <table>
                 <tr>
@@ -108,7 +108,7 @@
                 </tr>
                 <tr>
                     <td>
-                    <img src="public/pic/session.png" width="80%">
+                        <img src="public/pic/session.png" width="80%">
                     </td>
                     <td>
                         <img src="public/pic/pageview.png" width="80%">
@@ -138,18 +138,18 @@
 
 </section>
 
-    <!--<div id="demo">-->
-        <!--<span data-weight="91"> Gender </span>-->
-        <!--<span data-weight="21"> Date </span>-->
-        <!--<span data-weight="41"> SessionActivity</span>-->
-        <!--<span data-weight="13"> AddToCart </span>-->
-        <!--<span data-weight="78"> Traffic Channel </span>-->
-        <!--<span data-weight="91"> Session Duration </span>-->
-        <!--<span data-weight="21"> Page Views </span>-->
-        <!--<span data-weight="41"> osTypename</span>-->
-        <!--<span data-weight="13"> Days From Previous Visit </span>-->
-        <!--<span data-weight="78"> Exclusive Member </span>-->
-    <!--</div>-->
+<!--<div id="demo">-->
+<!--<span data-weight="91"> Gender </span>-->
+<!--<span data-weight="21"> Date </span>-->
+<!--<span data-weight="41"> SessionActivity</span>-->
+<!--<span data-weight="13"> AddToCart </span>-->
+<!--<span data-weight="78"> Traffic Channel </span>-->
+<!--<span data-weight="91"> Session Duration </span>-->
+<!--<span data-weight="21"> Page Views </span>-->
+<!--<span data-weight="41"> osTypename</span>-->
+<!--<span data-weight="13"> Days From Previous Visit </span>-->
+<!--<span data-weight="78"> Exclusive Member </span>-->
+<!--</div>-->
 <section class="success" id="about">
     <div class="container" style="color: Black">
         <h1 style="color:black">Insights</h1>
@@ -199,160 +199,216 @@
 
         <h5>Classifiers explored:</h5>
         <ul>
-          <li>SVM - Linear</li>
-          <li>SVM - RBF kernel</li>
-          <li>Logistic Regression</li>
-          <li>Decision Tree</li>
-          <li>Random Forest</li>
-          <li>Feed Forward Neural Network (on spark)</li>
+            <li>SVM - Linear</li>
+            <li>SVM - RBF kernel</li>
+            <li>Logistic Regression</li>
+            <li>Decision Tree</li>
+            <li>Random Forest</li>
+            <li>Feed Forward Neural Network (on spark)</li>
         </ul>
         <br>
         <div class="center-block"  style="text-align:center">
-          <img src="public/pic/flow.png" width="80%">
+            <img src="public/pic/flow.png" width="80%">
         </div>
         <br><br>
-      <div class="center-block"  style="text-align:center">
-        <p>Detailed workflow for parallel execution in spark</p>
-        <img src="public/pic/sparkworkflow.png" width="90%">
-      </div>
+        <div class="center-block"  style="text-align:center">
+            <p>Detailed workflow for parallel execution in spark</p>
+            <img src="public/pic/sparkworkflow.png" width="90%">
+        </div>
+<br>
+        <h3>Results from current system</h3>
+<br>
+        <h4>Confusion Matrix</h4>
+        <br>
+        <h5>Weighted 1's with a factor of 5. Accuracy: 81%</h5>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>0</th>
+                <th>1</th>
+                <!--<th>Username</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>0</th>
+                <td>96162</td>
+                <td>60493</td>
+                <!--<td>@mdo</td>-->
+            </tr>
+            <tr>
+                <th>1</th>
+                <td>840</td>
+                <td>171709</td>
+                <!--<td>@fat</td>-->
+            </tr>
+            </tbody>
+        </table>
+
+                <h5>Unweighted. Accuracy: 79%</h5>
+        <table class="table table-inverse">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>0</th>
+                <th>1</th>
+                <!--<th>Username</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>0</th>
+                <td>109343</td>
+                <td>47666</td>
+                <!--<td>@mdo</td>-->
+            </tr>
+            <tr>
+                <th>1</th>
+                <td>15804</td>
+                <td>156391</td>
+                <!--<td>@fat</td>-->
+            </tr>
+            </tbody>
+        </table>
     </div>
 
 
 
 
-<!-- Contact Section -->
-<section id="contact">
-    <div class="container">
-        <h3 style="color: black">Machine Learning : Supervised learning algorithm: Time to test our system!!</h3>
-        <form id="upload-data-form" enctype = "multipart/form-data">
-            <div class="form-group"><br> <br>
-         <input type = "file" id="file-select" name = "files[]" multiple class="inputfile"/><br><br>
-                <!--<label for="file-select">Choose a file</label>-->
-         <input type = "submit" class="btn btn-primary" id="upload-button"/>
-            </div>
-      </form>
-        <br>
-        <br>
-        <h6 id="prediction-result"></h6>
-    </div>
-</section>
-<!-- Footer -->
-<footer class="text-center">
-    <div class="footer-above">
+    <!-- Contact Section -->
+    <section id="contact">
         <div class="container">
-            <div class="row">
-                <div class="footer-col col-md-4">
-                    <h3>Team members</h3>
-                    <p>Akshaya Khare<br> Abhinav Maurya <br> Ronnie Mathew <br> Sarita Joshi</p>
+            <h3 style="color: black">Machine Learning : Supervised learning algorithm: Time to test our system!!</h3>
+            <form id="upload-data-form" enctype = "multipart/form-data">
+                <div class="form-group"><br> <br>
+                    <input type = "file" id="file-select" name = "files[]" multiple class="inputfile"/><br><br>
+                    <!--<label for="file-select">Choose a file</label>-->
+                    <input type = "submit" class="btn btn-primary" id="upload-button"/>
                 </div>
-                <div class="footer-col col-md-4">
-                    <h3>Datathon 2017</h3>
-                    <ul class="list-inline">
-                        <!--<li>-->
+            </form>
+            <br>
+            <br>
+            <h2 id="prediction-result" style="text-align: center; color: teal"></h2>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Team members</h3>
+                        <p>Akshaya Khare<br> Abhinav Maurya <br> Ronny Mathew <br> Sarita Joshi</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Datathon 2017</h3>
+                        <ul class="list-inline">
+                            <!--<li>-->
                             <!--<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>-->
-                        <!--</li>-->
-                        <!--<li>-->
+                            <!--</li>-->
+                            <!--<li>-->
                             <!--<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>-->
-                        <!--</li>-->
-                        <!--<li>-->
+                            <!--</li>-->
+                            <!--<li>-->
                             <!--<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>-->
-                        <!--</li>-->
-                        <!--<li>-->
+                            <!--</li>-->
+                            <!--<li>-->
                             <!--<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>-->
-                        <!--</li>-->
-                        <li>
-                            <a href="https://github.com/abhinavmaurya/brown-datathon"><img src="public/pic/Octocat.jpg" width="50%"></a>
-                        </li>
-                        <li>
-                            We @Github
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-col col-md-4">
-                    <h3>YOLO Team</h3><br>
-                    <p>
-                    Northeastern University<br>
-                Boston</h3></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-below">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    Copyright &copy; Yolo 2017
+                            <!--</li>-->
+                            <li>
+                                <a href="https://github.com/abhinavmaurya/brown-datathon"><img src="public/pic/Octocat.jpg" width="50%"></a>
+                            </li>
+                            <li>
+                                We @Github
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>YOLO Team</h3><br>
+                        <p>
+                            Northeastern University<br>
+                            Boston</h3></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
-<!-- jQuery -->
-<script src="public/vendor/jquery/jquery.min.js"></script>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Yolo 2017
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="public/vendor/jquery/jquery.min.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="public/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="public/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-<!-- Plugin JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-<!-- Contact Form JavaScript -->
-<script src="public/js/jqBootstrapValidation.js"></script>
-<script src="public/js/contact_me.js"></script>
+    <!-- Contact Form JavaScript -->
+    <script src="public/js/jqBootstrapValidation.js"></script>
+    <script src="public/js/contact_me.js"></script>
 
-<!-- Theme JavaScript -->
-<script src="public/js/freelancer.min.js"></script>
+    <!-- Theme JavaScript -->
+    <script src="public/js/freelancer.min.js"></script>
 
-<script>
-    var form = document.getElementById('upload-data-form');
-    var presult = document.getElementById('prediction-result');
-    var fileSelect = document.getElementById('file-select');
-    var uploadButton = document.getElementById('upload-button');
-    form.onsubmit = function(event) {
-  event.preventDefault();
+    <script>
+        var form = document.getElementById('upload-data-form');
+        var presult = document.getElementById('prediction-result');
+        var fileSelect = document.getElementById('file-select');
+        var uploadButton = document.getElementById('upload-button');
+        form.onsubmit = function(event) {
+            event.preventDefault();
 
-  // Update button text.
-  uploadButton.innerHTML = 'Uploading...';
-  // Get the selected files from the input.
-var files = fileSelect.files;
+            // Update button text.
+            uploadButton.innerHTML = 'Uploading...';
+            // Get the selected files from the input.
+            var files = fileSelect.files;
 // Create a new FormData object.
-var formData = new FormData();
+            var formData = new FormData();
 // Loop through each of the selected files.
-for (var i = 0; i < files.length; i++) {
-  var file = files[i];
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
 
 //  // Check the file type.
 //  if (!file.type.match('image.*')) {
 //    continue;
 //  }
 
-  // Add the file to the request.
-  formData.append('files[]', file, file.name);
-}
+                // Add the file to the request.
+                formData.append('files[]', file, file.name);
+            }
 
 // Set up the request.
-var xhr = new XMLHttpRequest();
+            var xhr = new XMLHttpRequest();
 
 // Open the connection.
-xhr.open('POST', 'http://localhost:5000/upload', true);
+            xhr.open('POST', 'http://localhost:5000/upload', true);
 
 // Set up a handler for when the request finishes.
-xhr.onload = function () {
-  if (xhr.status === 200) {
-    // File(s) uploaded.
-    uploadButton.innerHTML = 'Upload';
-    console.log(xhr.responseText);
-    presult.innerText = xhr.responseText;
-  } else {
-    alert('An error occurred!');
-  }
-};
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // File(s) uploaded.
+                    uploadButton.innerHTML = 'Upload';
+                    console.log(xhr.responseText);
+                    presult.innerText = xhr.responseText;
+                } else {
+                    alert('An error occurred!');
+                }
+            };
 
 // Send the Data.
-xhr.send(formData);
+            xhr.send(formData);
 
-    }
-</script>
+        }
+    </script>
 
 </body>
 
