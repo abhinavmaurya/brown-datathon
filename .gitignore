@@ -2,4 +2,7 @@
 derby.log
 metastore_db/*
 .ipynb_checkpoints/*
-
+.idea/
+.idea/brown-datathon.iml
+.idea/workspace.xml
+.DS_Store
