@@ -3,7 +3,7 @@ svg {
 }
 
 .area {
-    fill: blue;
+    fill: brown;
     clip-path: url(#clip);
 }
 
@@ -71,7 +71,7 @@ h1{
 h2{
     padding-left: -200px;
     text-align: center;
-    color: navy;
+    color: blue;
     font-size: 300%;
 }
 

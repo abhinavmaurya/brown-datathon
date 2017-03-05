@@ -136,10 +136,52 @@
 
 
 <section class="success" id="about">
-    <div class="container">
-
+    <div class="container" style="color: Black">
+        <h1 style="color:black">Insights</h1>
+        <h3 align="left">Increase in Traffic in the month of January:</h3>
+        On analysis of the data we find that the site is much more active in the month of january as compared to the
+        months of November and December (Refer visualization 1 for details). Generally one would think that the most use of the travel site would come in
+        during one week before christmas, new year or even thanksgiving. Surprisingly, as per the data there is no such spike
+        of traffic during such time. Instead, there was an unusual hike of both traffic and bookings in the month of January.
+        Seems like people get enthusiastic about their travel plans during the new year.
+        <h3 align="left">Exclusive users add to cart but don't book:</h3>
+        Another interesting insight was when we found that 9314 instances where people added to cart, 9279 were Exclusive users.
+        But when we checked the booked instances, the count was only 3021. It suggests that probably the users were waiting for
+        some discounts because of which they haven't booked yet.
+        <h3 align="left">Purchase money data is biased:</h3>
+        We found that first of all this data is quite low in frequency, and then we also found that this data is only available
+        for people who are exclusive members. Based on this information we can infer that this information is biased and
+        <h3 align="left">Traffic Channels:</h3>
+        On first look, it looks like Channels "A" and "H" have the highest traffic and the booking purchases.
+        But On looking at the ratio between number traffic and actual bookings, Channel "C" has the best ratio.
+        So we can probably direct more advertisements towards channel "C".
+        <h3 align="left">Top devices for accessing Trip Advisor:</h3>
+        As per the trip Advisor's site, they claim that 42% of their traffic comes in from the smart phone market.
+        <a href="http://ir.tripadvisor.com/releasedetail.cfm?ReleaseID=919990">Proof.</a>
+        As per the data which we received, this makes sense. Most of the traffic comes from the PC or the laptop.
+        It makes sense that we do not support the same metrics because the data is limited.
+        <h3 align="left">Booking purchases is inversely proportional to features such as Session Activity, Session Duration and no. of Pages Visited:</h3>
+        Based on this data, it looks like the more time the user spends on the site, either he is too confused, or he is just messing
+        around with the trip advisor sales team who are hoping graciously that this user will finally select a location and book
+        his ticket. But Alas! this is not what the data suggests, and its better to not to spend time on this user.
     </div>
-</section>
+    <br />
+    <br />
+    <div class="container" style="color: Black">
+        <h1 style="color:black">Specification</h1>
+        <b>NOTE:</b>All the insights and results are based on the data released by Trip Advisor for three months between Nov-2016
+        to Jan-2017. Any irregularity or incorrect data does not represent the company's true status.
+        <h3 align="left">Data Exploration and Analysis:</h3>
+        We explored the data by using Excel and Tableau.
+        <h3 align="left">Data Visualization:</h3>
+        Data Visualization was done by D3 and Tableau. We used d3 for Brushing and linking of data which contains the date and
+        the number of users visiting the site. We can zoom in and zoom out the dates based on the user's preference.
+        We tried to cross-link the data brushed to the actual dataset of one million records. But due to such a large size of data,
+        we were unable to get the other visualizations connected in time. so we decided to visualize all the other insights we had using
+        Tableau.
+        <h3 align="left">Machine Learning:</h3>
+        We used Python and Spark for the backend.
+    </div>
 
 
 
@@ -147,7 +189,7 @@
 <!-- Contact Section -->
 <section id="contact">
     <div class="container">
-        <h3>Machine Learning : Supervised learning algorithm: Time to test our system!!</h3>
+        <h3 style="color: black">Machine Learning : Supervised learning algorithm: Time to test our system!!</h3>
         <form id="upload-data-form" enctype = "multipart/form-data">
             <div class="form-group"><br> <br>
          <input type = "file" id="file-select" name = "files[]" multiple class="inputfile"/><br><br>

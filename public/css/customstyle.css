@@ -50,3 +50,6 @@ button.navbar-toggle {
 .inputfile + label:hover {
     background-color: red;
 }
+h1{
+    color: black !important;
+}
