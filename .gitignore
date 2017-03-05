@@ -1,4 +1,5 @@
-*.csv
+datathon_tadata.csv
+converted_data.csv
 derby.log
 metastore_db/*
 .ipynb_checkpoints/*
