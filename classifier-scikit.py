@@ -14,10 +14,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import VotingClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
-
+from sklearn.externals import joblib
 
 # Purpose: Classifier class to use the data to train and create a prediction model.
-class DiabeticPredictor():
+class BookingPredictor():
 
     #Purpose: Intialize the class varaibles and read data from CSV
 
@@ -44,7 +44,7 @@ class DiabeticPredictor():
         self.drop_irrelevant_cols()
         #self.normalize()
         #self.impute_most_frequent()
-        #self.select_k_best()
+        self.select_k_best()
 
     #Purpose: Uses the Mode to replace all the missing values
     def impute_most_frequent(self):
@@ -80,14 +80,15 @@ class DiabeticPredictor():
 
     #Purpose: Feature selection is done using F_regression
     def select_k_best(self):
-        df_dataset_y = self.df['readmitted']
+        df_dataset_y = self.df['BookingPurchase']
         df_dataset = self.df[self.df.columns[:-1]]
         sel_k = int(round(self.df.shape[1]*0.60))
         f_reg = SelectKBest(f_regression, k=sel_k)
         df_dataset = f_reg.fit_transform(df_dataset,df_dataset_y)
         selected_cols = np.asarray(self.df.columns[:-1])[f_reg.get_support()]
-        selected_cols = np.append(selected_cols,'readmitted')
-        self.df = self.df[selected_cols]
+        print(selected_cols)
+        selected_cols = np.append(selected_cols,'BookingPurchase')
+        #self.df = self.df[selected_cols]
 
     #Purpose: Normalize the data using Z-Score method.
     def normalize(self):
@@ -264,6 +265,7 @@ class DiabeticPredictor():
             testScores = accuracy_score(yTest, y_pred)
             confusionMatrix = confusion_matrix(yTest, y_pred)
             print(confusionMatrix)
+            joblib.dump(clf, label + '.pkl')
             # testScores = cross_val_score(clf, xTest, yTest, cv=5, scoring='accuracy')
             print("Test Accuracy: %0.2f [%s]" % (testScores, label))
 
@@ -299,7 +301,7 @@ def main():
     parser.add_argument("-f","--file_name",type=str,help="Data file name")
     args=parser.parse_args()
     file_name = args.file_name
-    predictor = DiabeticPredictor(file_name)
+    predictor = BookingPredictor(file_name)
     predictor.set_nan_cols()
     predictor.preprocess()
     predictor.oversampling()
