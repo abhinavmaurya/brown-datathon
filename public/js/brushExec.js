@@ -64,6 +64,7 @@ function plot1() {
 
     var zoom = d3.behavior.zoom()
         .on("zoom", draw);
+
 // Add rect cover the zoomed graph and attach zoom event.
     var rect = svg.append("svg:rect")
         .attr("class", "pane")
@@ -132,13 +133,13 @@ function plot1() {
             .attr("y", -6)
             .attr("height", height2 + 7);
 
-        brush.on('brush', function (d) {
-            k = brush.extent();
-            j = data.filter(function (d) {
-                return k[0] <= d.Day && k[1] >= d.Day;
-            });
-            // newBarChart(j);
-        });
+        // brush.on('brush', function (d) {
+        //     k = brush.extent();
+        //     j = data.filter(function (d) {
+        //         return k[0] <= d.Day && k[1] >= d.Day;
+        //     });
+        //     // newBarChart(j);
+        // });
 
     });
 
@@ -156,8 +157,14 @@ function plot1() {
         focus.select(".x.axis").call(xAxis);
         // Force changing brush range
         brush.extent(x.domain());
-        // console.log(x.domain()[0] + "as" + x.domain()[1]);
+        var list = [];
+        list.push(x.domain()[0]);
+        list.push(x.domain()[1]);
+        // console.log(list);
+        plot(list);
         svg.select(".brush").call(brush);
+
+
     }
 
     function type(d) {
@@ -166,6 +173,18 @@ function plot1() {
         d.RecordCount = +d.RecordCount;
         return d;
     }
+
+}
+
+
+function plot(list){
+    // console.log(list);
+    d3.csv("datathon_tadata.csv", function (error, data1) {
+        cf= crossfilter(data1);
+        byDate = cf.dimension(function(d){return d.day;});
+
+
+    });
 
 }
 
