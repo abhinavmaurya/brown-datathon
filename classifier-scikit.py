@@ -240,7 +240,7 @@ class BookingPredictor():
 
     #Purpose: Implement voting classifier
     def run_voting_classifier(self):
-        clf1 = DecisionTreeClassifier(random_state=0, class_weight={0: 2})
+        clf1 = DecisionTreeClassifier(random_state=0)
         clf2 = LinearSVC(C=1.0, class_weight=None, dual=False, fit_intercept=True,intercept_scaling=1, loss='squared_hinge', max_iter=1000, multi_class='ovr',penalty='l2', random_state=None, tol=0.001, verbose=0)
         #clf2 = SVC(gamma=0.001, C=100.)
         clf3 = RandomForestClassifier(n_estimators = 25)
@@ -268,7 +268,7 @@ class BookingPredictor():
             testScores = accuracy_score(yTest, y_pred)
             confusionMatrix = confusion_matrix(yTest, y_pred)
             print(confusionMatrix)
-            joblib.dump(clf, 'model.pkl')
+            joblib.dump(clf, 'model2.pkl')
             # testScores = cross_val_score(clf, xTest, yTest, cv=5, scoring='accuracy')
             print("Test Accuracy: %0.2f [%s]" % (testScores, label))
 
